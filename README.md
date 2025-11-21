@@ -4,8 +4,6 @@
 
 <h3>C# API for extracting metadata from G-Code/3MF Files, designed for use with FlashForge (3D printer) software development</h3>
 
-![NuGet Version](https://img.shields.io/nuget/v/SlicerMeta?style=flat-square&logo=nuget&label=NuGet)
-![License](https://img.shields.io/github/license/Parallel-7/SlicerMeta?style=flat-square)
 ![.NET](https://img.shields.io/badge/.NET-512BD4?style=flat-square&logo=dotnet&logoColor=white)
 ![C#](https://img.shields.io/badge/C%23-239120?style=flat-square&logo=csharp&logoColor=white)
 
@@ -89,35 +87,15 @@ Easy to work with and use on any operating system
 
 ## Example Usage
 
-<table>
-<tr>
-<th>Step</th>
-<th>Code</th>
-<th>Description</th>
-</tr>
-<tr>
-<td>1</td>
-<td>var parser = new GCodeParser();</td>
-<td>Create a new parser instance</td>
-</tr>
-<tr>
-<td>2</td>
-<td>parser.Parse(filePath);</td>
-<td>Parse the gcode file at the specified path</td>
-</tr>
-<tr>
-<td>3</td>
-<td>parser.SlicerInfo.SlicerName</td>
-<td>Access the slicer name from metadata</td>
-</tr>
-<tr>
-<td>4</td>
-<td>parser.FileInfo.FilamentType</td>
-<td>Access the filament type information</td>
-</tr>
-</table>
-
 </div>
+
+```csharp
+var parser = new GCodeParser(); // create a new instance
+parser.Parse(filePath); // path to gcode file
+
+Console.WriteLine($"Sliced by: {parser.SlicerInfo.SlicerName}");  // get slicer name
+Console.WriteLine($"Filament Type: {parser.FileInfo.FilamentType}"); // get filament type
+```
 
 ---
 
